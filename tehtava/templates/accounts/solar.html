@@ -1,0 +1,35 @@
+{% extends 'accounts/navibar.html' %}
+
+{% block content %}
+
+    <h1>SolarBuddhica</h1>
+    <hr>
+    
+      <label for="set_time">Syötä aika:</label>
+        <input type="date" id="time_value" name="set_time">
+        <button onclick="aika()">Tarkista</button>
+
+    <hr>
+
+    <table id="myTable_time" class="table table-striped">
+      <thead>
+        <tr class="header">      
+          <th scope="col">Nimi</th>
+          <th scope="col">Saapunut</th>
+          <th scope="col">Annoksia</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for solar in solar_json %}
+        <tr id="nimi">      
+          <td>{{ solar.responsiblePerson }}</td>
+          <td>{{ solar.arrived }}</td>
+          <td>{{ solar.injections }}</td>
+        </tr>
+        {% endfor %}    
+      </tbody>
+    </table>
+<p id="count"></p>
+
+{% endblock%}
+

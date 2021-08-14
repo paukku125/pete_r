@@ -1,0 +1,36 @@
+{% extends 'accounts/navibar.html' %}
+
+{% block content %}
+
+    <h1>Antiqua</h1>
+    <hr>
+      
+      <input type="text" id="myInput2" placeholder="Etsi nimiä.." title="Pistä nimi">
+      <button onclick="myFunction(0)">Etsi nimistä</button>
+      <input type="text" id="myInput" onkeyup="myFunction(1)" placeholder="Etsi sairaala..." title="Pistä sairaala">
+      
+    <hr>
+
+    <table id="myTable" class="table table-striped">
+      <thead>
+        <tr class="header">      
+          <th scope="col">Nimi</th>
+          <th scope="col">Sairaala</th>
+          <th scope="col">Tilausnumero</th>
+          <th scope="col">Saapunut</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for test in antiqua_json %}
+        <tr id="nimi">      
+          <td>{{ test.responsiblePerson }}</td>
+          <td>{{ test.healthCareDistrict }}</td>
+          <td>{{ test.orderNumber }}</td>
+          <td>{{ test.arrived }}</td>
+        </tr>
+        {% endfor %}    
+      </tbody>
+    </table>
+
+{% endblock%}
+
