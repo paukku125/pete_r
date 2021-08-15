@@ -17,18 +17,7 @@ def antiqua(request):
 
 
 def read_antiqua_json():
-    # #Avaa tiedosto ja lue tiedosto
-    # f = open("E:\\Solita Tehtävä\solita_tehtava\json_files\Antiqua.source", "r")    
-    # r = f.read()
-    # f.close()
-    # #antique_json = r
-    # antique_json = json.load(r)
 
-    # print("\n\nTESTII = ", antique_json)
-
-    # return antique_json
-
-    #Toimii oikein, saa sekä list ja dict
     table = []
     with open('E:\\Solita Tehtävä\solita_tehtava\json_files\Antiqua.source', 'r') as f:
         for line in f:
@@ -39,10 +28,6 @@ def read_antiqua_json():
                 # You probably have bad JSON
                 continue
 
-    # for row in table:
-    #     print("\n\n\n JOU JOU =", type (row)) # type dict
-
-    #print("\n\n TYYPPPI table = ", table) # type list
     return table
     
 
